@@ -71,6 +71,37 @@ Nous sommes parvenus à reproduire les exemples du TP précédent après quelque
 <p>Nous avons ensuite voulu créer un programme plus avancé permettant de détecter le branchement d'un câble ethernet pendant que le programme poursuivait son éxécution normale et ne se concentrait plus uniquement sur la détection du câble. Nous avons décidé d'utiliser le mécanisme des intertuptions proposé par l'API. Lorsqu'un câble est branché une interruption est générée et peut être traitée par le programme.
 La réalisation de ce programme ne prit que quelques minutes mais sa vérification fut beaucoup plus longue, en effet le branchement du contrôleur ethernet est plutôt capricieux et bien souvent il n'est pas branché correctement empêchant de fait le fonctionnement correct du programme. Au bout de longues minutes de tests et de changements de controleurs et de postes nous sommes parvenus à faire fonctionner le programme allumant une LED au branchement d'un câble ethernet à l'aide d'interruptions.</p>
 
+<h1>
+<a id="séance-5-découverte-de-smews" class="anchor" href="#s%C3%A9ance-5-d%C3%A9couverte-de-smews" aria-hidden="true"><span class="octicon octicon-link"></span></a>Séance 5: Découverte de Smews</h1>
+
+<h2>
+<a id="compilation-de-smews-et-des-applications" class="anchor" href="#compilation-de-smews-et-des-applications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compilation de Smews et des applications</h2>
+
+<p>Cette séance fut consacrée à l'installation et la découverte du serveur web embarqué Smews. La Téléchargement et la compilation de Smews sur les machines ne posa aucun problème contrairement à l'étape suivant qui était d'associer la biblithèque rflpc avec Smews afin de compiler les applications pour mbed.
+Tout d'abord nous avons essayé de simplement faire appel au script "summon_rflpc" fourni avec Smews mais sans succès.Ensuite nous avons essayé d'indiquer manuellement à Smews un chemin vers rflpc téléchargé et compilé manuellement, toujours sans succès. Après avoir perdu de très longues minutes sur ce problème nous avons découvert que la seule solution pour que le script "summon_rflpc" parvienne à passer le proxy de l'université était de cloner depuis Github les sources de Smews (et non plus depuis le site officiel) et de compiler à partir de là.</p>
+
+<h2>
+<a id="première-application" class="anchor" href="#premi%C3%A8re-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Première application</h2>
+
+<p>Une fois l'application compilée il ne restait plus qu'à l'éxécuter et constater son bon fonctionnement. Il fallait pour ça modifier les tables de routages de notre machine afin de pouvoir se connecter au mbed et accèder au serveur web. Cette étape fut extrêment longue en raison de deux problèmes en particulier. Le premier déjà connu venait du manque de fiabilité du contrôleur ethernet pour le mbed. Le second problème est venu du fait que notre machine refusait de mettre à jour correctement les tables de routage dans un premier temps (probablement dû à une mauvaise manipulation précédement), le problème fût finalement résolu grâce à un reboot.
+Tous ces problèmes (Contrôleur ethernet, tables de routage et proxy) ont fait que nous n'avons malheureusement pas eu le temps de tester un autre programme que le programme "welcome" fourni en exemple avec Smews.</p>
+
+<h1>
+<a id="séance-6--nouvelle-plaquette" class="anchor" href="#s%C3%A9ance-6--nouvelle-plaquette" aria-hidden="true"><span class="octicon octicon-link"></span></a>Séance 6 : Nouvelle plaquette</h1>
+
+<p>Lors de cette séance une extension pour la plaquette mbed nous fut procurée. Celle ci embarque, en vrac, un contrôleur ethernet, un écran lcd, un joystick etc.
+Le nouveau contrôleur ethernet étant fiable nous avons pu continuer les expérimentations avec Smews. L'inégralité de la séance fût consacrée à réaliser le tutoriel de Smews fourni avec la documentation officielle. Peu de difficultées majeures recontrées, quelques imprécisions de la documentation mais rien de plus.</p>
+
+<h1>
+<a id="séance-7--application-plus-évoluée" class="anchor" href="#s%C3%A9ance-7--application-plus-%C3%A9volu%C3%A9e" aria-hidden="true"><span class="octicon octicon-link"></span></a>Séance 7 : Application plus évoluée</h1>
+
+<p>Le but de cette séance était de commencer à utiliser les périphériques disponibles sur l'application board avec pour objectif final de réaliser une application qui va afficher sur le navigateur des informations en provenance d'un ou plusieurs périphériques. Nous avons décidé d'essayer de travailler avec le thermomère (Au hasard, il fallait bien prendre quelque chose) qui utilise le protocole I2C. RFLPC fourni des fonctions pour manipuler ce protocole à bas niveau nous avons donc dû nous renseigner sur le fonctionnement du protocole et essayer des choses. Pour le moment nous n'avons pas grand chose...</p>
+
+<h1>
+<a id="séance-8--le-protocole-i2c" class="anchor" href="#s%C3%A9ance-8--le-protocole-i2c" aria-hidden="true"><span class="octicon octicon-link"></span></a>Séance 8 : Le protocole I2C</h1>
+
+<p>Le but de cette séance sera de continuer les recherches sur le fonctionnement du protocole I2C avec pour objectif de parvenir à interagir avec la plaquette.</p>
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/elyl/PJE5">PJE5 - Lheureux Axel, Yuan Yao</a> is maintained by <a href="https://github.com/elyl">elyl</a>.</span>
 
