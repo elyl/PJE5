@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Lecteur audio</title>
+  <meta name="viewport" content="width=device-width, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src='funcs.js'></script>
+</head>
+<body onload="run()">
+  <center><h1>Lecteur audio</h1></center>
+  <center><audio controls id="audio">
+    <source src="a.mp3" type="audio/mp3" />
+  </audio></center>
+  <center><button type="button" onclick="nextTrack()"> Next</button></center><br/>
+  <center><button type="button" onclick="prevTrack()"> Previous</button></center><br/>
+  <center><button type="button" onclick="volumeUp()"> Volume up</button></center><br/>
+  <center><button type="button" onclick="volumeDown()"> Volume down</button></center><br/>
+  <center><button type="button" onclick="pauseAudio()"> Pause</button></center><br/>
+<div id="message"></div>
+</body>
+</html>
+
+
